@@ -3,12 +3,12 @@ k8s-workers-resource-requests-dashboard.json: |+
     "dashboard": {
       "__inputs": [
         {
-          "name": "DS_PROMETHEUS",
-          "label": "prometheus",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
+        "name"       : "DS_PROMETHEUS",
+        "label"      : "Prometheus",
+        "description": "",
+        "type"       : "datasource",
+        "pluginId"   : "prometheus",
+        "pluginName" : "Prometheus"
         }
       ],
       "__requires": [
@@ -464,5 +464,13 @@ k8s-workers-resource-requests-dashboard.json: |+
       "title": "Kubernetes Worker Resource Requests",
       "version": 1
     },
+    "inputs": [
+      {
+        "name": "DS_PROMETHEUS",
+        "pluginId": "prometheus",
+        "type": "datasource",
+        "value": "prometheus"
+      }
+    ],
     "overwrite": true
   }
