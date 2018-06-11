@@ -14,4 +14,4 @@ Our grafana dashboards for Kubernetes
 - sqs-dashbboard
   - Shows the SQS metics from Cloudwatch that are exported from the [cloudwatch-exporter](https://github.com/skyscrapers/charts/tree/master/cloudwatch-monitoring)
   - Based on [the SQS grafana dashboard](https://grafana.com/dashboards/584) 
-  - [Example](./images/sqs-dashbboard.png)
+  - [Example](./images/sqs-dashboard.png)
