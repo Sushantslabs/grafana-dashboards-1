@@ -566,7 +566,7 @@ sqs-dashboard.json: |+
   ,
   "inputs": [
     {
-      "name": "DS_PROMETHEUS",
+      "name": "DS_CUSTOMER",
       "pluginId": "prometheus",
       "type": "datasource",
       "value": "customer"
