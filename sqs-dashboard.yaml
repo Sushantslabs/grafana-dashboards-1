@@ -564,13 +564,13 @@ sqs-dashboard.json: |+
     "version" : 5
   }
   ,
-  "inputs": [
-    {
-      "name": "DS_CUSTOMER",
-      "pluginId": "prometheus",
-      "type": "datasource",
-      "value": "customer"
-    }
-  ],
-  "overwrite": true
+    "inputs": [
+      {
+        "name": "DS_CUSTOMER",
+        "pluginId": "prometheus",
+        "type": "datasource",
+        "value": "customer"
+      }
+    ],
+    "overwrite": true
 }
