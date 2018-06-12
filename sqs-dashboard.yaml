@@ -573,4 +573,4 @@ sqs-dashboard.json: |+
       }
     ],
     "overwrite": true
-}
+  }
