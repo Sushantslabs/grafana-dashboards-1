@@ -1144,7 +1144,7 @@ elasticsearch-dashboard.json: |+
             "fill"       : 1,
             "grid"       : {},
             "height"     : "400",
-            "id"         : 47,
+            "id"         : 33,
             "legend"     : {
               "alignAsTable": true,
               "avg"         : true,
@@ -1155,7 +1155,6 @@ elasticsearch-dashboard.json: |+
               "min"         : true,
               "rightSide"   : false,
               "show"        : true,
-              "sort"        : "max",
               "sortDesc"    : true,
               "total"       : false,
               "values"      : true
@@ -1168,30 +1167,35 @@ elasticsearch-dashboard.json: |+
             "pointradius"    : 5,
             "points"         : false,
             "renderer"       : "flot",
-            "seriesOverrides": [
+            "seriesOverrides": [],
+            "spaceLength"    : 10,
+            "span"           : 3,
+            "stack"          : false,
+            "steppedLine"    : false,
+            "targets"        : [
               {
-                "alias"    : "sent",
-                "transform": "negative-Y"
-              }
-            ],
-            "spaceLength": 10,
-            "span"       : 3,
-            "stack"      : false,
-            "steppedLine": false,
-            "targets"    : [
-              {
-                "expr"          : "irate(elasticsearch_transport_tx_size_bytes_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
+                "expr"          : "aws_es_free_storage_space_minimum * 1024 * 1024",
                 "format"        : "time_series",
+                "interval"      : "",
                 "intervalFactor": 2,
-                "legendFormat"  : "{{ name }} -sent",
-                "refId"         : "D",
+                "legendFormat"  : "minimum",
+                "metric"        : "",
+                "refId"         : "A",
                 "step"          : 10
               },
               {
-                "expr"          : "irate(elasticsearch_transport_rx_size_bytes_total{cluster=\"$cluster\",name=~\"$node\"}[$interval])",
+                "expr"          : "aws_es_free_storage_space_average * 1024 * 1024",
                 "format"        : "time_series",
                 "intervalFactor": 2,
-                "legendFormat"  : "{{ name }} -received",
+                "legendFormat"  : "average",
+                "refId"         : "B",
+                "step"          : 10
+              },
+              {
+                "expr"          : "aws_es_free_storage_space_maximum * 1024 * 1024",
+                "format"        : "time_series",
+                "intervalFactor": 2,
+                "legendFormat"  : "maximum",
                 "refId"         : "C",
                 "step"          : 10
               }
@@ -1199,7 +1203,7 @@ elasticsearch-dashboard.json: |+
             "thresholds": [],
             "timeFrom"  : null,
             "timeShift" : null,
-            "title"     : "Network usage",
+            "title"     : "Free storage space (AWS)",
             "tooltip"   : {
               "msResolution": false,
               "shared"      : true,
@@ -1217,16 +1221,16 @@ elasticsearch-dashboard.json: |+
             },
             "yaxes": [
               {
-                "format" : "Bps",
-                "label"  : "Bytes/sec",
+                "format" : "bytes",
+                "label"  : "Disk",
                 "logBase": 1,
                 "max"    : null,
-                "min"    : null,
+                "min"    : 0,
                 "show"   : true
               },
               {
-                "format" : "pps",
-                "label"  : "",
+                "format" : "short",
+                "label"  : null,
                 "logBase": 1,
                 "max"    : null,
                 "min"    : null,
