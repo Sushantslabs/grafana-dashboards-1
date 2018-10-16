@@ -1,4 +1,4 @@
-elasticsearch-dashboard.json: |+
+k8s-autoscaler-dashboard.json: |+
   {
     "dashboard":
   {
