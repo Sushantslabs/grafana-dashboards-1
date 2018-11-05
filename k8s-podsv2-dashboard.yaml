@@ -1,4 +1,4 @@
-pods-dashboard.json: |+
+k8s-podsv2-dashboard.json: |+
   {
     "dashboard":
   {
@@ -12,55 +12,18 @@ pods-dashboard.json: |+
         "pluginName": "Prometheus"
       }
     ],
-    "__requires": [
-      {
-        "type": "grafana",
-        "id": "grafana",
-        "name": "Grafana",
-        "version": "4.4.1"
-      },
-      {
-        "type": "panel",
-        "id": "graph",
-        "name": "Graph",
-        "version": ""
-      },
-      {
-        "type": "datasource",
-        "id": "prometheus",
-        "name": "Prometheus",
-        "version": "1.0.0"
-      },
-      {
-        "type": "panel",
-        "id": "singlestat",
-        "name": "Singlestat",
-        "version": ""
-      }
-    ],
     "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
+      "list": []
     },
-    "editable": false,
-    "gnetId": null,
+    "editable": true,
     "graphTooltip": 1,
     "hideControls": false,
-    "id": 13,
     "links": [],
     "refresh": false,
     "rows": [
       {
         "collapse": false,
+        "editable": true,
         "height": "250px",
         "panels": [
           {
@@ -68,8 +31,8 @@ pods-dashboard.json: |+
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "prometheus",
-            "editable": false,
+            "datasource": "${DS_PROMETHEUS}",
+            "editable": true,
             "error": false,
             "fill": 1,
             "grid": {
@@ -142,9 +105,6 @@ pods-dashboard.json: |+
                 "step": 20
               }
             ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
             "title": "Memory Usage",
             "tooltip": {
               "msResolution": true,
@@ -154,9 +114,7 @@ pods-dashboard.json: |+
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": []
             },
@@ -174,15 +132,13 @@ pods-dashboard.json: |+
             ]
           }
         ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
         "showTitle": false,
         "title": "Row",
         "titleSize": "h6"
       },
       {
         "collapse": false,
+        "editable": true,
         "height": "250px",
         "panels": [
           {
@@ -190,8 +146,8 @@ pods-dashboard.json: |+
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "prometheus",
-            "editable": false,
+            "datasource": "${DS_PROMETHEUS}",
+            "editable": true,
             "error": false,
             "fill": 1,
             "grid": {
@@ -253,9 +209,6 @@ pods-dashboard.json: |+
                 "step": 20
               }
             ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
             "title": "CPU Usage",
             "tooltip": {
               "msResolution": true,
@@ -265,9 +218,7 @@ pods-dashboard.json: |+
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": []
             },
@@ -285,15 +236,13 @@ pods-dashboard.json: |+
             ]
           }
         ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
         "showTitle": false,
         "title": "Row",
         "titleSize": "h6"
       },
       {
         "collapse": false,
+        "editable": true,
         "height": "250px",
         "panels": [
           {
@@ -301,8 +250,8 @@ pods-dashboard.json: |+
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "prometheus",
-            "editable": false,
+            "datasource": "${DS_PROMETHEUS}",
+            "editable": true,
             "error": false,
             "fill": 1,
             "grid": {
@@ -346,9 +295,6 @@ pods-dashboard.json: |+
                 "step": 30
               }
             ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
             "title": "Network I/O",
             "tooltip": {
               "msResolution": true,
@@ -358,9 +304,7 @@ pods-dashboard.json: |+
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": []
             },
@@ -378,26 +322,21 @@ pods-dashboard.json: |+
             ]
           }
         ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
         "showTitle": false,
         "title": "New Row",
         "titleSize": "h6"
       }
     ],
     "schemaVersion": 14,
+    "sharedCrosshair": false,
     "style": "dark",
     "tags": [],
     "templating": {
       "list": [
         {
           "allValue": ".*",
-          "current": {
-            "text": "All",
-            "value": "$__all"
-          },
-          "datasource": "prometheus",
+          "current": {},
+          "datasource": "${DS_PROMETHEUS}",
           "hide": 0,
           "includeAll": true,
           "label": "Namespace",
@@ -416,11 +355,8 @@ pods-dashboard.json: |+
         },
         {
           "allValue": null,
-          "current": {
-            "text": "fluentd-cloudwatch-fluentd-cloudwatch-269zq",
-            "value": "fluentd-cloudwatch-fluentd-cloudwatch-269zq"
-          },
-          "datasource": "prometheus",
+          "current": {},
+          "datasource": "${DS_PROMETHEUS}",
           "hide": 0,
           "includeAll": false,
           "label": "Pod",
@@ -439,11 +375,8 @@ pods-dashboard.json: |+
         },
         {
           "allValue": ".*",
-          "current": {
-            "text": "All",
-            "value": "$__all"
-          },
-          "datasource": "prometheus",
+          "current": {},
+          "datasource": "${DS_PROMETHEUS}",
           "hide": 0,
           "includeAll": true,
           "label": "Container",
