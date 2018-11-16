@@ -1,3 +1,5 @@
+**!! Deprecation notice:**  These dashboards are no longer maintained. They have been moved to our [`cluster-monitoring chart`](https://github.com/skyscrapers/charts/tree/master/cluster-monitoring)
+
 # grafana-dashboards
 
 Our grafana dashboards for Kubernetes
